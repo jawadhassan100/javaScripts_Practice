@@ -8,9 +8,14 @@ const rl = readline.createInterface({
 const randomNum = Math.floor(Math.random() * 16);
 let remainingTries = 5;
 
+const randomAnswer = () => {
+  console.log(`The number you were guessing was: ${randomNum}`);
+}
+
 const askQuestion = () => {
   if (remainingTries === 0) {
     console.log("You've run out of tries! Better luck next time.");
+    randomAnswer();
     rl.close();
     return;
   }
